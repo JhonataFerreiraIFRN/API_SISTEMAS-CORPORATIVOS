@@ -14,6 +14,12 @@ gem "puma", ">= 5.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
+# Gem para criptografar senhas
+gem "bcrypt", "~> 3.1.7"
+
+# Gem para criar e verificar tokens JWT
+gem "jwt"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
