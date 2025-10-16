@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_10_01_190436) do
+ActiveRecord::Schema[7.1].define(version: 2025_10_16_191014) do
   create_table "movimentacaos", force: :cascade do |t|
     t.string "tipo_operacao", limit: 1, null: false
     t.integer "correntista_id", null: false
@@ -18,6 +18,14 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_01_190436) do
     t.datetime "data_operacao", null: false
     t.string "descricao", limit: 50, null: false
     t.integer "correntista_beneficiario_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.string "nome"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
