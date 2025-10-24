@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Corporativo - Frontend</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>OMILIOR BANK</h1>
+            <div id="auth-section">
+                <div id="login-form">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <input type="email" id="email" placeholder="Email" required>
+                        <input type="password" id="password" placeholder="Senha" required>
+                        <button type="submit">Entrar</button>
+                    </form>
+                </div>
+                <div id="user-info" style="display: none;">
+                    <span id="user-name"></span>
+                    <button id="logout-btn">Sair</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Seção de Usuários -->
+            <section id="users-section" style="display: none;">
+                <h2>Gerenciamento de Usuários</h2>
+                <div class="form-group" id="users-list-section">
+                    <h3>Lista de Usuários</h3>
+                    <button id="loadUsersBtn">Carregar Usuários</button>
+                    <div id="usersList"></div>
+                </div>
+            </section>
+
+            <!-- Seção de Movimentações -->
+            <section id="movements-section" style="display: none;">
+                <h2>Operações Bancárias</h2>
+                
+                <!-- Extrato -->
+                <div class="form-group">
+                    <h3>Extrato</h3>
+                    <button id="loadExtractBtn">Carregar Extrato</button>
+                    <div id="extractList"></div>
+                </div>
+
+                <!-- Operações -->
+                <div class="operations-grid">
+                    <!-- Depósito -->
+                    <div class="form-group">
+                        <h3>Depósito</h3>
+                        <form id="depositForm">
+                            <input type="number" id="depositValue" placeholder="Valor" step="0.01" required>
+                            <input type="text" id="depositDescription" placeholder="Descrição" maxlength="50" required>
+                            <button type="submit">Realizar Depósito</button>
+                        </form>
+                    </div>
+
+                    <!-- Saque -->
+                    <div class="form-group">
+                        <h3>Saque</h3>
+                        <form id="withdrawForm">
+                            <input type="number" id="withdrawValue" placeholder="Valor" step="0.01" required>
+                            <input type="text" id="withdrawDescription" placeholder="Descrição" maxlength="50" required>
+                            <button type="submit">Realizar Saque</button>
+                        </form>
+                    </div>
+
+                    <!-- Transferência -->
+                    <div class="form-group">
+                        <h3>Transferência</h3>
+                        <form id="transferForm">
+                            <input type="number" id="transferValue" placeholder="Valor" step="0.01" required>
+                            <input type="number" id="transferBeneficiary" placeholder="ID do Beneficiário" required>
+                            <input type="text" id="transferDescription" placeholder="Descrição" maxlength="50" required>
+                            <button type="submit">Realizar Transferência</button>
+                        </form>
+                    </div>
+
+                    <!-- Pagamento -->
+                    <div class="form-group">
+                        <h3>Pagamento</h3>
+                        <form id="paymentForm">
+                            <input type="number" id="paymentValue" placeholder="Valor" step="0.01" required>
+                            <input type="text" id="paymentDescription" placeholder="Descrição" maxlength="50" required>
+                            <button type="submit">Realizar Pagamento</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
